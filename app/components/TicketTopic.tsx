@@ -11,7 +11,7 @@ interface Props {
     userId?: string;
     content?: string;
     images?: string[];
-    options?: Array<{ key: string, value: number }>
+    options: Array<{ key: string, value: number }>
 }
 
 function TicketTopic(props: Props) {
@@ -24,7 +24,7 @@ function TicketTopic(props: Props) {
 
     const [options, setOptions] = useState<typeof props.options>(props.options)
 
-    const [count, setCount] = useState(props.options?.reduce((acc, item) => acc + item.value, 0))
+    const [count, setCount] = useState(props.options.reduce((acc, item) => acc + item.value, 0));
 
     const { userId } = useAuth()
 

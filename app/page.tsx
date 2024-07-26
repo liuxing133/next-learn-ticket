@@ -32,7 +32,7 @@ export default function Home() {
         method: "GET"
       })
       const data = await reslut.json();
-      console.log(data.topics,'222222222222222222');
+      console.log(data.topics, '222222222222222222');
 
       setTopics(data.topics as Topic[])
     }
@@ -62,7 +62,7 @@ export default function Home() {
                     />
                     <Spacer x={2} />
                     <CldUploadButton uploadPreset="beln9yd7" onSuccess={(reslut) => {
-                      console.log(reslut.info?.url);
+                      // @ts-ignore
                       setImages([...images, reslut.info?.url])
                     }}>
                       <button className="bg-secondary-400 hover:bg-secondary-700 text-white font-bold py-2 px-4 rounded-lg">
